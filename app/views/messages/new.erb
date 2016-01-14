@@ -1,15 +1,19 @@
-new.erb
 <form id="sms_message" action='/messages' method='post'>
-<label for="sender">From: </label>
-<br>
-<input type="text" name="message[from]" placeholder="From: ">
-<br>
-<label for="recipient">To: </label>
-<br>
-<input type="text" name="message[to]" placeholder="To: ">
-<br>
-<label for="recipient">Message: </label>
-<br>
-<textarea rows="10" cols="30" name="message[body]" placeholder="Message"></textarea>
-<input type="submit" value="Send Message">
+
+  <div class="form-group">
+  <label for="sender">From: </label>
+  <input type="text" name="message[from]" placeholder="From: ">
+  </div>
+
+  <div class="form-group">
+  <label for="recipient">To: </label>
+  <input type="text" name="message[to]" placeholder="To: ">
+  </div>
+
+  <div class="form-group">
+  <label for="recipient">Message: </label>
+  <textarea rows="10" cols="30" name="message[body]" placeholder="Message"></textarea>
+  </div>
+
+  <input class="btn btn-default" type="submit" value="Send Message">
 </form>
