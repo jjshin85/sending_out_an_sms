@@ -1,0 +1,22 @@
+<h1>This is the login page</h1>
+
+<ul id="error-messages">
+  <% if @errors %>
+    <%= @errors %>
+  <% end %>
+</ul>
+
+<form action="/login" method="post">
+
+  <div class="form-group">
+  <label for="username">Username:</label>
+  <input type="text" name="username">
+  </div>
+
+  <div class="form-group">
+  <label for="password">Password:</label>
+  <input type="password" name="password">
+  </div>
+  <input class="btn btn-default" type="submit" value="login">
+
+</form>
