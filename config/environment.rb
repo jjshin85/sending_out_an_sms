@@ -19,6 +19,7 @@ require 'logger'
 require 'twilio-ruby'
 require 'sinatra'
 require "sinatra/reloader" if development?
+require 'rufus-scheduler'
 
 require 'erb'
 
@@ -44,7 +45,7 @@ configure do
 end
 
 CLIENT = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
-
+SCHEDULER = Rufus::Scheduler.new
 
 Twilio.configure do |config|
   config.account_sid = "ACaccfb5268cb23b1d2daa4f556e6ba64a"
