@@ -19,6 +19,12 @@ require 'logger'
 require 'twilio-ruby'
 require 'sinatra'
 require "sinatra/reloader" if development?
+require 'sidekiq'
+require 'redis'
+require 'sidekiq/api'
+
+require 'rubygems'
+require 'rufus/scheduler'
 
 require 'erb'
 
@@ -29,7 +35,6 @@ APP_NAME = APP_ROOT.basename.to_s
 
 AUTH_TOKEN = "08ae13cdabed63a3a86b2b8ad999465a"
 ACCOUNT_SID = "ACaccfb5268cb23b1d2daa4f556e6ba64a"
-TWILIO_ROOT_PATH = "/2010-04-01/Accounts/"
 
 configure do
   # By default, Sinatra assumes that the root is the file that calls the configure block.
@@ -45,6 +50,7 @@ end
 
 CLIENT = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
 
+SCHEDULER = Rufus::Scheduler.new
 
 Twilio.configure do |config|
   config.account_sid = "ACaccfb5268cb23b1d2daa4f556e6ba64a"

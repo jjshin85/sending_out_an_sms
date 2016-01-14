@@ -14,6 +14,9 @@ gem 'rake'
 
 gem 'shotgun'
 gem 'twilio-ruby'
+gem 'rufus-scheduler'
+gem 'sidekiq', '~> 2.17.0'
+gem 'redis'
 
 gem 'bcrypt-ruby'
 
