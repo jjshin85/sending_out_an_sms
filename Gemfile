@@ -18,6 +18,8 @@ gem 'rufus-scheduler'
 gem 'sidekiq', '~> 2.17.0'
 gem 'redis'
 
+gem 'bcrypt-ruby'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'

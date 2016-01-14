@@ -1,7 +1,19 @@
-$(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+$(document).ready(function () {
+  $(".nav-tabs > li:nth-child(1)").on("click", function() {
+    $("div > #logout").hide()
+    $("div > #profile").hide()
+    $("div > #home").show()
+  });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $(".tabs > li:nth-child(2)").on("click", function() {
+    $("div > #integrity").hide()
+    $("div > #whole_self").hide()
+    $("div > #kindness").show()
+  });
+
+  $(".tabs > li:nth-child(3)").on("click", function() {
+    $("div > #kindness").hide()
+    $("div > #integrity").hide()
+    $("div > #whole_self").show()
+  });
 });
