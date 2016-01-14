@@ -12,7 +12,10 @@ end
 
 post "/messages" do
   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-  CLIENT.account.messages.create(params[:message])
+  puts "message sent"
+  SCHEDULER.in 1m do
+    CLIENT.account.messages.create(params[:message])
+  end
 end
 
 
