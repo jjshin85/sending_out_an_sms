@@ -1,0 +1,33 @@
+<h1>Register for this awesome site</h1>
+
+<ul id="error-messages">
+  <% if @user.try(:errors) %>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<form method="post", action="/users">
+
+  <label for="username-input">Username: </label>
+  <input id="username-input" name="user[username]" type="text" value="<%= @user.try(:username) %>">
+
+  <label for="password-input">Password: </label>
+  <input id="password-input" name="user[password]" type="password" value="<%= @user.try(:password) %>">
+
+  <label for="username-input">SID: </label>
+  <input id="SID-input" name="user[SID]" type="text" value="<%= @user.try(:SID) %>">
+
+  <label for="token-input">Authorization Token: </label>
+  <input id="token-input" name="user[token]" type="text" value="<%= @user.try(:token) %>">
+
+  <label for="twilio-number-input">Twilio Phone Number: </label>
+  <input id="twilio-number-input" name="user[twilio-number]" type="text" value="<%= @user.try(:twilio-number) %>">
+
+  <label for="raw-number-input">Your Actual Phone Number: </label>
+  <input id="raw-number-input" name="user[raw-number]" type="text" value="<%= @user.try(:raw-number) %>">
+
+  <input type="submit" value="Register">
+
+</form>
