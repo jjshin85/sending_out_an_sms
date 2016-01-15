@@ -31,8 +31,6 @@ APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 APP_NAME = APP_ROOT.basename.to_s
 
-ACCOUNT_SID = "AC8ef4d575744d2d3cda6b90d125ffae70"
-AUTH_TOKEN = "ae45c904bcf77b5cce6e614f5f16f0f7"
 
 configure do
   # By default, Sinatra assumes that the root is the file that calls the configure block.
