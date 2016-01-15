@@ -21,16 +21,17 @@
 </head>
 <body>
   <header>
-  <nav class="nav navbar-default">
-    <ul class="nav nav-tabs">
+  <nav id="custom-bootstrap-menu" class="nav navbar-default">
+    <ul class="nav nav-pills">
       <% if session[:user_id] %>
-        <li id="home"><a href="/">Home</a></li>
-        <li id="profile"><a href="/users/<%= session[:user_id] %>">Profile</a></li>
-        <li id="logout"><a href="/logout">Logout</a></li>
+        <li class="navbar-header">
+<a href="/"></i>Home</a></li>
+        <li class="navbar-header"><a href="/users/<%= session[:user_id] %>">Profile</a></li>
+        <li class="navbar-header"><a href="/logout">Logout</a></li>
       <% else %>
-        <li><a href="/">Home</a></li>
-        <li><a href="/login">Login</a></li>
-        <li><a href="/users/new">Register</a></li>
+        <li class="navbar-header"><a href="/">Home</a></li>
+        <li class="navbar-header"><a href="/login">Login</a></li>
+        <li class="navbar-header"><a href="/users/new">Register</a></li>
       <% end %>
     </ul>
   </nav>
