@@ -2,3 +2,55 @@
   text-align: center;
   margin-top: 5%;
 }
+
+.nav {
+  background: black;
+  font-size: 1.1em;
+}
+
+.name {
+
+}
+
+.subtext {
+
+}
+
+a {
+  color: white;
+}
+
+.btn:hover {
+  color: #ff9933;
+}
+
+a:hover {
+  color: #ff9933;
+}
+
+.future {
+  font-size: 4em;
+}
+
+.highlight {
+  color: #ff9933;
+}
+
+#cell {
+  height: 15em;
+  width: 15em;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#joshwill {
+  float: left;
+}
+
+#sandwich {
+  float: right;
+}
+
+#becky {
+
+}

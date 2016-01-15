@@ -1,4 +1,4 @@
-<h1>Register for this awesome site</h1>
+<h1><span class="highlight">Register</span> for this awesome site</h1>
 
 <ul id="error-messages">
   <% if @user && @user.errors %>
@@ -22,7 +22,7 @@
 
   <div class="form-group">
   <label for="username-input">SID: </label>
-  <input id="SID-input" name="user[SID]" type="text" value="<%= @user.try(:SID) %>">
+  <input id="SID-input" name="user[sid]" type="text" value="<%= @user.try(:sid) %>">
   </div>
 
   <div class="form-group">

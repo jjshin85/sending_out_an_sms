@@ -1,8 +1,3 @@
-get '/users' do
-  @users = User.all
-  erb :"users/index"
-end
-
 post '/users' do
   @user = User.new(params[:user])
   if @user.save
@@ -20,6 +15,7 @@ end
 get '/users/:id' do
   if current_user
     @user = User.find(params[:id])
+    @users = User.all
     erb :"users/show"
   else
     redirect :"/login"

@@ -1,1 +1,12 @@
-<h1>Hello, <%= @user.username %></h1>
+<h1>Hello, <span class="highlight"><%= @user.username.capitalize %></span></h1>
+
+<h2>Browse those <span class="highlight">Contacts</span></h2>
+
+<ul>
+  <% @users.each do |user| %>
+  <li class="name"><%= user.username %></li>
+  <li class="subtext"><%= user.raw_number %></li>
+  <% end %>
+</ul>
+
+<a href="/messages" class="btn btn-default">Create Message</a>
