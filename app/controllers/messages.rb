@@ -11,5 +11,3 @@ post "/messages" do
     CLIENT.account.messages.create(params[:message])
   end
 end
-
-
