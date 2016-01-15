@@ -7,7 +7,6 @@ get "/messages" do
 end
 
 post "/messages" do
-    SCHEDULER.in "10s" do
-    CLIENT.account.messages.create(params[:message])
-  end
+  TwilioWorker.perform_in(convert_to_seconds(params[:time]).seconds, params[:message])
+  redirect "/"
 end

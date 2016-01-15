@@ -14,9 +14,11 @@ gem 'rake'
 
 gem 'shotgun'
 gem 'twilio-ruby'
-gem 'rufus-scheduler'
+gem 'sidekiq'
+gem 'redis'
 
 gem 'bcrypt-ruby'
+gem "eventmachine"
 
 group :test do
   gem 'shoulda-matchers'

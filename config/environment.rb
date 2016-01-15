@@ -15,12 +15,14 @@ require 'bcrypt'
 require 'pg'
 require 'active_record'
 require 'logger'
+require 'eventmachine'
 
 require 'twilio-ruby'
 require 'sinatra'
 require "sinatra/reloader" if development?
 
-require 'rufus-scheduler'
+require 'sidekiq'
+require 'redis'
 
 require 'erb'
 
@@ -29,6 +31,8 @@ APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 APP_NAME = APP_ROOT.basename.to_s
 
+ACCOUNT_SID = "AC8ef4d575744d2d3cda6b90d125ffae70"
+AUTH_TOKEN = "ae45c904bcf77b5cce6e614f5f16f0f7"
 
 configure do
   # By default, Sinatra assumes that the root is the file that calls the configure block.
@@ -44,12 +48,10 @@ end
 
 CLIENT = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
 
-SCHEDULER = Rufus::Scheduler.new
-
-
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
+Dir[APP_ROOT.join('app', 'workers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
