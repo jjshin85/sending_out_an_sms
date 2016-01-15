@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :created_messages, foreign_key: :sender_id
   has_many :received_messages, foreign_key: :recipient_id
+  has_many :created_requests, foreign_key: :friender_id
+  has_many :received_requests, foreign_key: :friendee_id
 
   validates :username, presence: true
   validates_uniqueness_of :username
