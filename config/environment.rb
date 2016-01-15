@@ -19,6 +19,7 @@ require 'logger'
 require 'twilio-ruby'
 require 'sinatra'
 require "sinatra/reloader" if development?
+
 require 'rufus-scheduler'
 
 require 'erb'
@@ -27,7 +28,6 @@ require 'erb'
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 APP_NAME = APP_ROOT.basename.to_s
-
 
 
 configure do
@@ -43,6 +43,7 @@ configure do
 end
 
 CLIENT = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
+
 SCHEDULER = Rufus::Scheduler.new
 
 Twilio.configure do |config|
