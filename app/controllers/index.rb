@@ -8,10 +8,10 @@ end
 
 post "/messages" do
   puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-  Thread.new { SCHEDULE.in "10s" do
+   SCHEDULER.in "10s" do
     CLIENT.account.messages.create(params[:message])
   end
-  }
+
 end
 
 

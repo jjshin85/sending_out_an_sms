@@ -60,6 +60,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.0)
+    rufus-scheduler (3.2.0)
     shotgun (0.9)
       rack (>= 1.0)
     shoulda-matchers (2.8.0)
@@ -100,6 +101,7 @@ DEPENDENCIES
   rack-test
   rake
   rspec (~> 3.0)
+  rufus-scheduler
   shotgun
   shoulda-matchers
   sinatra
