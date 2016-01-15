@@ -28,9 +28,7 @@ APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 APP_NAME = APP_ROOT.basename.to_s
 
-AUTH_TOKEN = "08ae13cdabed63a3a86b2b8ad999465a"
-ACCOUNT_SID = "ACaccfb5268cb23b1d2daa4f556e6ba64a"
-TWILIO_ROOT_PATH = "/2010-04-01/Accounts/"
+
 
 configure do
   # By default, Sinatra assumes that the root is the file that calls the configure block.
@@ -48,8 +46,8 @@ CLIENT = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
 SCHEDULER = Rufus::Scheduler.new
 
 Twilio.configure do |config|
-  config.account_sid = "ACaccfb5268cb23b1d2daa4f556e6ba64a"
-  config.auth_token = "08ae13cdabed63a3a86b2b8ad999465a"
+  config.account_sid =
+  config.auth_token =
 end
 
 
