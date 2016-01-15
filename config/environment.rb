@@ -46,11 +46,6 @@ CLIENT = Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
 
 SCHEDULER = Rufus::Scheduler.new
 
-Twilio.configure do |config|
-  config.account_sid =
-  config.auth_token =
-end
-
 
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
